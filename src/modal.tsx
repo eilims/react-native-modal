@@ -433,6 +433,11 @@ export class ReactNativeModal extends React.Component<ModalProps, State> {
               },
               gestureState,
             );
+            Animated.spring(this.state.pan!, {
+              toValue: {x: 0, y: 0},
+              bounciness: 0,
+              useNativeDriver: false,
+            }).start();
             return;
           }
           // Deprecated. Remove later.
